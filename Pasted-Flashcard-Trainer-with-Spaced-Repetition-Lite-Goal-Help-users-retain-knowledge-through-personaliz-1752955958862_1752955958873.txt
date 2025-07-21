@@ -1,0 +1,85 @@
+Flashcard Trainer with Spaced Repetition (Lite)
+Goal: Help users retain knowledge through personalized flashcard reviews using spaced repetition.
+
+1️⃣ Problem Statement
+Students and self-learners often forget what they study. An interactive flashcard tool with spaced repetition helps optimize retention — especially useful for engineers, language learners, and exam takers.
+
+2️⃣ Target User
+Students (like yourself 😉)
+
+Self-learners
+
+Developers learning new frameworks
+
+Competitive exam prep folks
+
+3️⃣ Solution Summary
+A lightweight web app that allows users to:
+
+Create decks and flashcards.
+
+Review cards with difficulty-based spacing.
+
+Track daily progress.
+All done on the front-end with persistent storage using Replit DB or localStorage.
+
+4️⃣ Core Features (MVP)
+#	Feature	Description
+1	Deck Management	Create, rename, and delete flashcard decks.
+2	Card CRUD	Add/edit/delete flashcards (front/back).
+3	Trainer Mode	Flip card, rate difficulty (Easy, Medium, Hard), adjust future review dates.
+4	Progress Dashboard	Show cards studied today, streak, accuracy %.
+5	Storage	Use Replit DB (REST) or localStorage.
+6	Dynamic Routing	React Router: /, /deck/:id, /train/:id, /stats.
+
+5️⃣ Tech Stack
+Layer	Tool
+Frontend	React (Vite/Cra)
+Routing	React Router DOM
+State	React Context API or Zustand
+Storage	Replit DB / localStorage
+Styling	Tailwind CSS (or simple CSS)
+Animations	Flip effect via CSS or Framer Motion
+
+6️⃣ Spaced Repetition Logic (Lite)
+After each card flip:
+
+Easy → show again in 4 days
+
+Medium → 2 days
+
+Hard → tomorrow
+
+Schedule stored per card.
+
+Only show due cards in training.
+
+7️⃣ Pages Overview
+Route	Page	Description
+/	Home	Deck list & create deck
+/deck/:id	Deck View	View/edit cards in a deck
+/train/:id	Trainer	Card-by-card review flow
+/stats	Dashboard	Track user’s progress
+
+8️⃣ Stretch Goals (Post-MVP)
+GPT API: “Explain this card better”
+
+Export/import decks
+
+Deck sharing via link
+
+Dark mode
+
+PWA for offline use
+
+9️⃣ Success Criteria
+🔁 App runs smoothly on Replit Free Tier
+
+🧠 Trainer mode cycles through spaced cards correctly
+
+🔐 Data persists across refreshes
+
+📱 Responsive and snappy on mobile + desktop
+
+🧭 All navigation and routing works without refresh
+
